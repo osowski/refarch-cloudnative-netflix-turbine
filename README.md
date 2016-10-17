@@ -48,7 +48,7 @@ The **Microservices Reference Application for Netflix OSS** is maintained by the
     1.1.  To run the JAR file locally, you can simply pass parameters to the Java command in the command prompt:  
         `java -jar docker/app.jar`  
     1.2.  To run the Docker file locally, you can pass the same parameters to start the local Docker image:  
-        `docker run -p 8080:8080 netflix-zuul:latest`  
+        `docker run -p 8080:8080 netflix-turbine:latest`  
 
 3.  Verify there is a Turbine Server service visible in your Eureka Dashboard at `http://localhost:8761/`.
 
