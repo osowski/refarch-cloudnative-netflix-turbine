@@ -15,11 +15,15 @@ eureka:
     preferIpAddress: true
 
 turbine:
-  clusterNameExpression: new String("default")
-  appConfig: menu-service
+  #clusterNameExpression: new String("default")
+  aggregator:
+    clusterConfig: MENU-SERVICE,WHATS-FOR-DINNER
+  appConfig: menu-service,whats-for-dinner
   instanceInsertPort: false
   instanceUrlSuffix:
-    default: :9180/hystrix.stream  # 'default' equals CLUSTER NAME
+    MENU-SERVICE: :9180/hystrix.stream
+    WHATS-FOR-DINNER: :9181/hystrix.stream
+    #default: :9180/hystrix.stream   # 'default' equals CLUSTER NAME
 
 ---
 spring:
