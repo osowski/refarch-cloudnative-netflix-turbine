@@ -1,5 +1,5 @@
 server:
-  port: ${vcap.application.port:8989}
+  port: ${PORT:8989}
 
 management:
   port: 8990
@@ -14,6 +14,12 @@ eureka:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
     preferIpAddress: true
 
+turbine:
+  clusterNameExpression: new String("default")
+  appConfig: menu-service
+  instanceInsertPort: false
+  instanceUrlSuffix:
+    default: :9180/hystrix.stream  # 'default' equals CLUSTER NAME
 
 ---
 spring:
@@ -24,3 +30,5 @@ eureka:
     preferIpAddress: false
 management:
   port: -1
+turbine:
+  instanceUrlSuffix: /hystrix.stream
