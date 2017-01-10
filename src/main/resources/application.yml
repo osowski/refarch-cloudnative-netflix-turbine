@@ -23,6 +23,10 @@ turbine:
     WHATS-FOR-DINNER: :9181/hystrix.stream
     #default: :9180/hystrix.stream   # 'default' equals CLUSTER NAME
 
+spring:
+  rabbitmq:
+    addresses: ${vcap.services.rabbitmq.credentials.url}
+
 ---
 spring:
   profiles: cloud
