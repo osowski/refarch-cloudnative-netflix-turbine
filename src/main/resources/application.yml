@@ -25,7 +25,7 @@ turbine:
 
 spring:
   rabbitmq:
-    addresses: ${vcap.services.rabbitmq.credentials.url}
+    addresses: ${vcap.services.cloudamqp.credentials.uri}
 
 ---
 spring:
